@@ -32,8 +32,6 @@ const Post = ({ state, actions, libraries }) => {
     <Container>
       <div>
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-
-        {/* Only display author and date on posts */}
         {data.isPost && (
           <div>
             {author && (

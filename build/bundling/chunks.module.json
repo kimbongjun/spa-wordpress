@@ -1,0 +1,98 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "8d88a5f0c339fc3e92ba",
+  "publicPath": "/static/",
+  "outputPath": "D:\\workspace\\LOCAL-WORDPRESS\\frontity\\bongjour\\build\\static",
+  "assetsByChunkName": {
+    "bongjour": "bongjour.module.js",
+    "list": "list.module.js",
+    "vendors~list": "vendors~list.module.js"
+  },
+  "assets": [
+    {
+      "name": "bongjour.module.js",
+      "size": 6568809,
+      "chunks": [
+        "bongjour"
+      ],
+      "chunkNames": [
+        "bongjour"
+      ],
+      "info": {},
+      "emitted": false,
+      "isOverSizeLimit": true
+    },
+    {
+      "name": "list.module.js",
+      "size": 60337,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "vendors~list.module.js",
+      "size": 1003508,
+      "chunks": [
+        "vendors~list"
+      ],
+      "chunkNames": [
+        "vendors~list"
+      ],
+      "info": {},
+      "emitted": false,
+      "isOverSizeLimit": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "bongjour": {
+      "chunks": [
+        "bongjour"
+      ],
+      "assets": [
+        "bongjour.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "bongjour": {
+      "chunks": [
+        "bongjour"
+      ],
+      "assets": [
+        "bongjour.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "vendors~list",
+        "list"
+      ],
+      "assets": [
+        "vendors~list.module.js",
+        "list.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

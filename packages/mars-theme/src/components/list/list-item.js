@@ -1,16 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
+import Box from "@material-ui/core/Box";
+import Skeleton from "react-loading-skeleton";
 
-/**
- * Item Component
- *
- * It renders the preview of a blog post. Each blog post contains
- * - Title: clickable title of the post
- * - Author: name of author and published date
- * - FeaturedMedia: the featured image/video of the post
- */
+function SkeletonChildrenDemo(props, item) {
+  const { loading = false } = props;
+
+  return (
+    <LoadingItem>
+      {loading ? <Skeleton width="100%" /> : <Excerpt>asd</Excerpt>}
+    </LoadingItem>
+  );
+}
+SkeletonChildrenDemo.propTypes = {
+  loading: PropTypes.bool,
+};
+
 const Item = ({ state, item }) => {
   const author = state.source.author[item.author];
   const date = new Date(item.date);
@@ -45,9 +53,10 @@ const Item = ({ state, item }) => {
       )}
 
       {/* If the post has an excerpt (short summary text), we render it */}
-      {item.excerpt && (
-        <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-      )}
+      <Loading>
+        <SkeletonChildrenDemo loading />
+        <SkeletonChildrenDemo />
+      </Loading>
     </article>
   );
 };
@@ -81,4 +90,13 @@ const PublishDate = styled.span`
 const Excerpt = styled.div`
   line-height: 1.6em;
   color: rgba(12, 17, 43, 0.8);
+`;
+
+const Loading = styled.div`
+  position: relative;
+`;
+const LoadingItem = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
 `;
