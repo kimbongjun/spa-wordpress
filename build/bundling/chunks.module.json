@@ -2,18 +2,46 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "8d88a5f0c339fc3e92ba",
+  "hash": "451e1e81c41296df51cf",
   "publicPath": "/static/",
   "outputPath": "D:\\workspace\\LOCAL-WORDPRESS\\frontity\\bongjour\\build\\static",
   "assetsByChunkName": {
-    "bongjour": "bongjour.module.js",
-    "list": "list.module.js",
-    "vendors~list": "vendors~list.module.js"
+    "bongjour": [
+      "bongjour.module.js",
+      "bongjour.45c980176a3a6ec4a61e.hot-update.js"
+    ],
+    "list": "list.module.js"
   },
   "assets": [
     {
+      "name": "45c980176a3a6ec4a61e.hot-update.json",
+      "size": 50,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "bongjour.45c980176a3a6ec4a61e.hot-update.js",
+      "size": 19115,
+      "chunks": [
+        "bongjour"
+      ],
+      "chunkNames": [
+        "bongjour"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "bongjour.module.js",
-      "size": 6568809,
+      "size": 6696914,
       "chunks": [
         "bongjour"
       ],
@@ -21,12 +49,11 @@
         "bongjour"
       ],
       "info": {},
-      "emitted": false,
-      "isOverSizeLimit": true
+      "emitted": false
     },
     {
       "name": "list.module.js",
-      "size": 60337,
+      "size": 45868,
       "chunks": [
         "list"
       ],
@@ -35,19 +62,6 @@
       ],
       "info": {},
       "emitted": false
-    },
-    {
-      "name": "vendors~list.module.js",
-      "size": 1003508,
-      "chunks": [
-        "vendors~list"
-      ],
-      "chunkNames": [
-        "vendors~list"
-      ],
-      "info": {},
-      "emitted": false,
-      "isOverSizeLimit": true
     }
   ],
   "filteredAssets": 0,
@@ -57,7 +71,8 @@
         "bongjour"
       ],
       "assets": [
-        "bongjour.module.js"
+        "bongjour.module.js",
+        "bongjour.45c980176a3a6ec4a61e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -69,18 +84,17 @@
         "bongjour"
       ],
       "assets": [
-        "bongjour.module.js"
+        "bongjour.module.js",
+        "bongjour.45c980176a3a6ec4a61e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "list": {
       "chunks": [
-        "vendors~list",
         "list"
       ],
       "assets": [
-        "vendors~list.module.js",
         "list.module.js"
       ],
       "children": {},

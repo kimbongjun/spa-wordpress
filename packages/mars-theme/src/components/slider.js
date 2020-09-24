@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import useInView from "@frontity/hooks/use-in-view";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { connect, styled } from "frontity";
-import { fetch } from "frontity";
+import swiperCss from "../assets/css/swiper-bundle.min.css";
+import "../assets/css/slider.css";
+import { Global, css, connect, styled, fetch } from "frontity";
+import Skeleton from "react-loading-skeleton";
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -19,21 +21,39 @@ const Slider = () => {
         setUsers(users);
         setLoading(false);
       });
-  });
-  if (loading) return <div>Loading...</div>;
+  }, []);
+
+  if (loading) return <Skeleton />;
+
   return (
-    <Swiper
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-    >
-      {users.slide.map((user) => (
-        <SwiperSlide key={user.id}>
-          <img src={user.url} alt={user.title} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      <Global styles={css(swiperCss)} />
+      <Swiper
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+        css={css`
+          max-width: 1100px;
+          width: 100%;
+          height: 500px;
+        `}
+      >
+        {users.slide.map((item, i) => (
+          <SwiperSlide key={item.id} className="swiper-slide">
+            <img
+              src={item.url}
+              css={css`
+                width: 100%;
+                height: auto;
+              `}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 };
 

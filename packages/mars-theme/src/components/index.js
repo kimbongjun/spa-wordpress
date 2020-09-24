@@ -2,13 +2,14 @@ import React from "react";
 import { Global, css, connect, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
 import Header from "./header";
+import Footer from "./footer";
 import List from "./list";
 import Post from "./post";
 import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 import Slider from "./slider";
-
+import MainContents from "./main-contents";
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
@@ -38,12 +39,18 @@ const Theme = ({ state }) => {
       on the type of URL we are in. */}
       <Main>
         <Switch>
+          <Slider when={data.isHome} />
           <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Post when={data.isPostType} />
           <PageError when={data.isError} />
         </Switch>
       </Main>
+
+      <Contents>{data.isHome && <MainContents />}</Contents>
+      <FootContainer>
+        <Footer />
+      </FootContainer>
     </>
   );
 };
@@ -70,6 +77,13 @@ const HeadContainer = styled.div`
   background-color: #1f38c5;
 `;
 
+const FootContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333;
+`;
+
 const Main = styled.div`
   display: flex;
   justify-content: center;
@@ -78,4 +92,10 @@ const Main = styled.div`
     rgba(66, 174, 228, 0.1),
     rgba(66, 174, 228, 0)
   );
+`;
+
+const Contents = styled.div`
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
 `;
